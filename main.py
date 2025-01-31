@@ -1,4 +1,7 @@
-def main(book_path):
+def main():
+    print_report(book)
+
+def read_book(book_path):
     with open(book_path) as f:
         return f.read()
 
@@ -31,13 +34,12 @@ def print_report(text):
     print("--- End report ---")
     return
 
-book = main("books/frankenstein.txt")
+book = read_book("books/frankenstein.txt")
 words = count_words(book)
 all_characters = count_characters(book)
 alpha_characters = get_alphabet(book)
 
-print_report(book)
-
+main()
 
 
 
